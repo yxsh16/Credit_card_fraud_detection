@@ -5,6 +5,11 @@ matplotlib
 seaborn
 Flask
 pymongo
+ydata-profiling
+flaml[notebook]
+xgboost
+imblearn
+
 
 
 -e .
