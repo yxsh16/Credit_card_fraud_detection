@@ -9,7 +9,7 @@ ydata-profiling
 flaml[notebook]
 xgboost
 imblearn
-
-
+category-encoders
+catboost
 
 -e .
