@@ -73,10 +73,72 @@ class DataTransformation:
 
             return preprocessing_pipeline 
         
-        ## INCOMPLETE _____________________________________
-        
             logging.info('Pipelining complete')
         
         except Exception as e:
-            logging.info('Exception during DataTransformation')
+            logging.info('Exception during getting DataTransformation object')
             raise CustomException(e, sys)        
+        
+        
+        
+        
+    def initiate_data_transformation(self,train_data_path, test_data_path): 
+        
+        
+        try : 
+            
+            train_df = pd.read_csv(train_data_path)
+            test_df = pd.read_csv(test_data_path)
+            
+            logging.info('Read train and test data')
+            logging.info(f'Train dataframe head : \n {train_df.head().to_string()}')
+            logging.info(f'Test dataframe head : \n {test_df.head().to_string()}') 
+            
+            logging.info('Getting preprocessor object')
+        
+            preprocessor = self.get_data_transformation_obj()
+            
+            target_column = 'Is Fraud?'
+            drop_column = [target_column]
+            
+            # divinding dataset in dependent and indedpent dataset
+            # Training dataset:
+            #X_train
+            input_feature_train_df = train_df.drop(columns = drop_column, axis = 1 )
+            #y_train
+            target_feature_train_df =  train_df[target_column]
+            
+            # Test dataset:
+            # X_test
+            input_feature_test_df = test_df.drop(columns = drop_column, axis = 1 )
+            # y_test
+            target_feature_test_df =  test_df[target_column]
+        
+            # Data Transformation:
+            
+            input_feature_train_df, target_feature_train_df = RandomUnderSampler(random_state=1613 ,
+                                                                                  sampling_strategy= 0.01).fit_resample(input_feature_train_df, target_feature_train_df)
+
+            
+            input_feature_train_arr = preprocessor.fit_transform(input_feature_train_df)
+            input_feature_test_arr = preprocessor.transform(input_feature_test_df)
+            
+            # Encoding 
+            label_encoder = LabelEncoder()
+            target_feature_train_df = label_encoder.fit_transform(target_feature_train_df)
+            target_feature_test_df = label_encoder.transform(target_feature_test_df)
+           
+            logging.info('Applying preprocessor on train and test data completed')
+            
+            # Final df
+            train_arr = np.c_[input_feature_train_arr, np.array(target_feature_train_df)] 
+            test_arr = np.c_[input_feature_test_arr, np.array(target_feature_test_df)]
+            
+            ## PICKLING THE PREPROCESSOR OBJECT 
+            ## PICKLING THE PREPROCESSOR OBJECT 
+            ## PICKLING THE PREPROCESSOR OBJECT 
+            #------------------------------------------
+            
+        except Exception as e:
+            logging.info('Exception during DataTransformation')   
+            raise CustomException(e, sys)    
