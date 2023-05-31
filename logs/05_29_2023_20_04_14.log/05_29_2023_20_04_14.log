@@ -1,4 +1,0 @@
-[ 2023-05-29 20:04:15,320 ] 27 root - INFO - Data ingestion initiated
-[ 2023-05-29 20:04:15,472 ] 31 root - INFO - CSV file read successfully
-[ 2023-05-29 20:04:15,879 ] 36 root - INFO - Raw data saved successfully
-[ 2023-05-29 20:04:16,315 ] 43 root - INFO - Train and test data saved successfully

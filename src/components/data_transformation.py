@@ -1,24 +1,15 @@
 # Feature Engineering and Feature Selection
-import gc
 import warnings
 import numpy as np 
 import pandas as pd 
-import multiprocessing as mp
 warnings.filterwarnings('ignore')
 from sklearn.pipeline import Pipeline
-from sklearn.impute import SimpleImputer
-from sklearn.compose import ColumnTransformer
 from sklearn.preprocessing import FunctionTransformer
-from sklearn.metrics import confusion_matrix
 from sklearn.preprocessing import LabelEncoder
-from sklearn.preprocessing import StandardScaler
-from sklearn.metrics import classification_report
-from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import FunctionTransformer, LabelEncoder, OneHotEncoder
+from sklearn.preprocessing import FunctionTransformer, LabelEncoder
 from category_encoders.binary import BinaryEncoder
 from imblearn.under_sampling import RandomUnderSampler
-from imblearn.pipeline import Pipeline as imbpipeline 
-import matplotlib.pyplot as plt
+
 
 from src.logger  import logging
 from src.exception import CustomException
@@ -83,8 +74,7 @@ class DataTransformation:
         
         
     def initiate_data_transformation(self,train_data_path, test_data_path): 
-        
-        
+
         try : 
             
             train_df = pd.read_csv(train_data_path)
@@ -121,23 +111,31 @@ class DataTransformation:
 
             
             input_feature_train_arr = preprocessor.fit_transform(input_feature_train_df)
-            input_feature_test_arr = preprocessor.transform(input_feature_test_df)
+            input_feature_test_arr = preprocessor.fit_transform(input_feature_test_df)
             
-            # Encoding 
+            # Encoding Target variable
             label_encoder = LabelEncoder()
             target_feature_train_df = label_encoder.fit_transform(target_feature_train_df)
             target_feature_test_df = label_encoder.transform(target_feature_test_df)
-           
+
             logging.info('Applying preprocessor on train and test data completed')
-            
+           
             # Final df
             train_arr = np.c_[input_feature_train_arr, np.array(target_feature_train_df)] 
             test_arr = np.c_[input_feature_test_arr, np.array(target_feature_test_df)]
             
-            ## PICKLING THE PREPROCESSOR OBJECT 
-            ## PICKLING THE PREPROCESSOR OBJECT 
-            ## PICKLING THE PREPROCESSOR OBJECT 
-            #------------------------------------------
+            ## ADDED
+            logging.info(f'Train transformed dataframe head : \n {input_feature_train_arr.head().to_string()}')
+            logging.info(f'Test transformed dataframe head : \n {input_feature_test_arr.head().to_string()}') 
+            
+
+            
+            
+            return (
+                train_arr,
+                test_arr,
+                #self.data_transformation_config.preprocessor_obj_file_path,
+            )
             
         except Exception as e:
             logging.info('Exception during DataTransformation')   
