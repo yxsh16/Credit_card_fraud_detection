@@ -6,7 +6,6 @@ seaborn
 Flask
 pymongo
 ydata-profiling
-flaml[notebook]
 xgboost
 imblearn
 category-encoders
