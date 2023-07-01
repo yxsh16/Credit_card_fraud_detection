@@ -1,18 +1,18 @@
 # 💳 Credit Card Fraud detection using Machine Learning 
 
-## Problem Statement:
+## 📝 Problem Statement:
 Financial threats are displaying a trend about the credit risk of commercial banks as the
 incredible improvement in the financial industry has arisen. In this way, one of the
 biggest threats faces by commercial banks is the risk prediction of credit clients. The
 goal is to predict the probability of credit fault based on credit card owner's
 characteristics and payment history.
 
-## Approach:
+## 💭 Approach:
 The classical machine learning tasks like Data Exploration, Data Cleaning,
 Feature Engineering, Model Building and Model Testing. Trying out different machine
 learning algorithms that’s best fit for the above case.
 
-## Results: 
+## 📈 Results: 
 Built a solution that is able to predict the probability of credit
 card fault based on credit card owner’s transactions.
 
@@ -52,13 +52,17 @@ pip install -r requirements.txt
 python application.py
 ```
 4. Usage: <br><br>
-   Upload your data in a csv file from the upload file menu<br>
-   The data will be preprocessed, and model will detect the fraudulent transactions<br>
-   The predictions will be stored in a csv file with name 'predictions.csv'<br>
+   Upload your data in a csv file from the upload file menu.<br>
+   The data will be preprocessed, and model will detect the fraudulent transactions.<br>
+   The predictions will be stored in a csv file with name 'predictions.csv'.<br>
 
 ## Dataset : <br>
 Dataset can be fetched from [here](https://www.kaggle.com/datasets/ealtman2019/credit-card-transactions)
-<br><br>
+<br>
+
+## Contributors 👨🏻‍💻<br>
+● [Vaibhav Srivastava](https://github.com/Vaibhav832)
+
 
   
 
