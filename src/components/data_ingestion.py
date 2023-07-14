@@ -8,7 +8,7 @@ from dataclasses import dataclass
 from src.exception import CustomException
 from sklearn.model_selection import train_test_split
 
-## Initialize the data ingestion configuration
+
 
 @dataclass 
 class DataIngestionConfig:
@@ -17,7 +17,7 @@ class DataIngestionConfig:
     raw_data_path:str = os.path.join('artifacts' , 'raw_data.csv')
 
 
-# Creating dataingestion class:
+
 
 class DataIngestion:
     def __init__(self):
