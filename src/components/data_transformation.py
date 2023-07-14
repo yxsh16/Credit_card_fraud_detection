@@ -94,7 +94,7 @@ class DataTransformation:
             ).fit_resample(X_train, y_train)
 
             X_train = pd.DataFrame(preprocessor.fit_transform(X_train), dtype = 'float')
-            X_test = pd.DataFrame(preprocessor.fit_transform(X_test), dtype = 'float')
+            X_test = pd.DataFrame(preprocessor.transform(X_test), dtype = 'float')
 
             label_encoder = LabelEncoder()
             y_train = label_encoder.fit_transform(y_train)
