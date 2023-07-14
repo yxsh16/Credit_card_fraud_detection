@@ -1,41 +1,91 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>CodePen - 11/100 100DaysCSS</title>
+  <title>Upload CSV for Prediction</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-<link rel="stylesheet" href="../static/css/style.css">
+  <link rel="stylesheet" href="../static/css/style.css">
+  <style>
+    /* Add custom styles here */
+    body {
+      background-color: #f7f7f7;
+      font-family: Arial, sans-serif;
+    }
 
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 40px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+    }
+
+    .title {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+      font-size: 24px;
+    }
+
+    .dropzone {
+      text-align: center;
+      border: 2px dashed #ccc;
+      padding: 40px;
+      margin-bottom: 20px;
+      cursor: pointer;
+      transition: border-color 0.3s ease;
+    }
+
+    .dropzone:hover {
+      border-color: #45a049;
+    }
+
+    .upload-icon {
+      width: 80px;
+      height: 80px;
+    }
+
+    .upload-text {
+      font-size: 18px;
+      margin-top: 10px;
+      color: #888;
+    }
+
+    .btn-container {
+      text-align: center;
+    }
+
+    .btn {
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #45a049;
+    }
+
+  </style>
 </head>
 <body>
-	
-<!-- partial:index.partial.html -->
-<form action = "/upload" method = "post" enctype="multipart/form-data" >
-	<h1 class="title">Upload CSV for the prediction</h1>
-<div class="frame">
-	<div class="center">
-		<div class="title">
-			<h1>Drop file to upload</h1>
-		</div>
-		
-
-			<div class="dropzone">
-				<img src="http://100dayscss.com/codepen/upload.svg" class="upload-icon" />
-				<input type="file" class="upload-input" name = "file" accept=".csv" >
-			</div>
-
-		<button type="submit" class="btn" name="uploadbutton">Upload file</button>
-		
-	</div>
-
-</div>
-
-</form>
-<!-- original pen: https://codepen.io/roydigerhund/pen/ZQdbeN  -->
-
-<!-- NO JS ADDED YET -->
-<!-- partial -->
-  <script src='https://100dayscss.com/codepen/js/jquery.min.js'></script><script  src="./script.js"></script>
-
+  <div class="container">
+    <h1 class="title">Upload CSV for Prediction</h1>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+      <div class="dropzone">
+        <img src="http://100dayscss.com/codepen/upload.svg" class="upload-icon" alt="Upload Icon" />
+        <p class="upload-text">Drop File to Upload</p>
+        <input type="file" class="upload-input" name="file" accept=".csv">
+      </div>
+      <div class="btn-container">
+        <button type="submit" class="btn" name="uploadbutton">Upload File</button>
+      </div>
+    </form>
+  </div>
 </body>
 </html>
