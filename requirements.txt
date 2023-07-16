@@ -11,5 +11,4 @@ imblearn
 category-encoders
 catboost
 
-
 -e .
