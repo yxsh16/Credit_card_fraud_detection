@@ -5,10 +5,12 @@ application = Flask(__name__)
 app = application
 
 @app.route('/')
+@cross_origin()
 def home_page():
     return render_template('upload_file.html')
 
 @app.route('/upload', methods=['POST'])
+@cross_origin()
 def upload_file():
     if request.method == 'POST':
         file = request.files['file']
