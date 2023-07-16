@@ -31,4 +31,4 @@ def upload_file():
             return jsonify({'success': False, 'message': 'No file was uploaded.'})
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0')
+    app.run(host='127.0.0.1', port=8000, debug=True)
