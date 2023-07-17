@@ -5,12 +5,12 @@ application = Flask(__name__)
 app = application
 
 @app.route('/')
-@cross_origin()
+# @cross_origin()
 def home_page():
     return render_template('upload_file.html')
 
 @app.route('/upload', methods=['POST'])
-@cross_origin()
+# @cross_origin()
 def upload_file():
     if request.method == 'POST':
         file = request.files['file']
@@ -31,4 +31,4 @@ def upload_file():
             return jsonify({'success': False, 'message': 'No file was uploaded.'})
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0')
+    app.run(host='0.0.0.0', debug=True)

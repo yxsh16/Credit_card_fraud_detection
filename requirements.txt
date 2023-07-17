@@ -1,15 +1,9 @@
 pandas
 numpy
 scikit-learn
-matplotlib
-seaborn
 Flask
-pymongo
-ydata-profiling
 xgboost
-imblearn
 category-encoders
 catboost
 
 
--e .
