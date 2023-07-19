@@ -14,7 +14,8 @@ learning algorithms that’s best fit for the above case.
 
 ## 📈 Results: 
 Built a solution that is able to predict the probability of credit
-card fault based on credit card owner’s transactions.
+card fault based on credit card owner’s transactions.<br>
+Deployed the application on AWS BeanStalk.
 
 ## 🔧 Tech Stack Used:
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)<br>
@@ -25,7 +26,8 @@ card fault based on credit card owner’s transactions.
 ![NumPy](https://img.shields.io/badge/numpy-%23013243.svg?style=for-the-badge&logo=numpy&logoColor=white)<br>
 ![scikit-learn](https://img.shields.io/badge/scikit--learn-%23F7931E.svg?style=for-the-badge&logo=scikit-learn&logoColor=white)<br>
 ![Flask](https://img.shields.io/badge/flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white)<br>
-![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
+![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)<br>
+![AWS](https://img.shields.io/badge/AWS-%23FF9900.svg?style=for-the-badge&logo=amazon-aws&logoColor=white)
 <br>
 <br>
 
@@ -64,9 +66,3 @@ Dataset can be fetched from [here](https://www.kaggle.com/datasets/ealtman2019/c
 ● [Vaibhav Srivastava](https://github.com/Vaibhav832)
 
 
-  
-
-
-   
-    
-    
